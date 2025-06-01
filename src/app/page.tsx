@@ -419,26 +419,28 @@ export default function VaporaidLandingPage() {
               alt=""
               width={40}
               height={40}
-              className=""
-            />{" "}
-            <span className="text-2xl font-bold text-[#b13537]">Vaporaid</span>
+              className="w-8 h-8 sm:w-10 sm:h-10"
+            />
+            <span className="text-xl sm:text-2xl font-bold text-[#b13537] ml-2">
+              Vaporaid
+            </span>
           </Link>
-          <nav className="hidden md:flex gap-6 ml-auto">
+          <nav className="hidden md:flex gap-4 lg:gap-6 ml-auto">
             <Link
               href="#sobre"
-              className="text-[#8d8c8c] hover:text-[#3f8ec9] transition-colors"
+              className="text-sm lg:text-base text-[#8d8c8c] hover:text-[#3f8ec9] transition-colors"
             >
               Sobre o Projeto
             </Link>
             <Link
               href="#coleta"
-              className="text-[#8d8c8c] hover:text-[#3f8ec9] font-semibold transition-colors"
+              className="text-sm lg:text-base text-[#8d8c8c] hover:text-[#3f8ec9] font-semibold transition-colors"
             >
               Pontos de Coleta
             </Link>
             <Link
               href="#nossos-pilares"
-              className="text-[#8d8c8c] hover:text-[#3f8ec9] transition-colors"
+              className="text-sm lg:text-base text-[#8d8c8c] hover:text-[#3f8ec9] transition-colors"
             >
               Nossos Pilares
             </Link>
@@ -448,65 +450,70 @@ export default function VaporaidLandingPage() {
 
       <main className="flex-1">
         <section className="relative w-full h-screen text-[#fffaf2] overflow-hidden flex items-center justify-center">
-          {/* Imagem de fundo com opacidade */}
           <img
             src="/fundo.png"
             alt="background"
             className="absolute inset-0 w-full h-full object-cover opacity-70"
           />
-          {/* Camada azul escura com transparência */}
           <div className="absolute inset-0 bg-[#0F1F2A]/85" />
 
           <div className="container mx-auto px-4 relative z-10">
-            <div className="flex justify-around flex-col md:flex-row items-center">
-              <div className="w-full md:w-3/5 mb-10 md:mb-0 -mt-12">
-                <div className="justify-start">
-                  <span className="text-white text-[12rem] leading-none font-chunk font-extrabold">
+            <div className="flex justify-around flex-col lg:flex-row items-center gap-8">
+              <div className="w-full lg:w-3/5 mb-8 lg:mb-0 text-center lg:text-left">
+                <div className="justify-center lg:justify-start flex flex-wrap">
+                  <span className="text-white text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[12rem] leading-none font-chunk font-extrabold">
                     Vapor
                   </span>
-                  <span className="text-[#d13537] text-[12rem] leading-none font-chunk font-extrabold">
+                  <span className="text-[#d13537] text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[12rem] leading-none font-chunk font-extrabold">
                     aid
                   </span>
                 </div>
 
-                <p className="text-3xl md:text-4xl lg:text-5xl mb-10 pt-6">
+                <p className="text-lg sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl mb-6 lg:mb-10 pt-4 lg:pt-6">
                   Vapor que{" "}
-                  <span className="bg-[#d13537] px-2 py-1 rounded-md text-white">
+                  <span className="bg-[#d13537] px-1 sm:px-2 py-1 rounded-md text-white">
                     protege.
                   </span>
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <Button
                     onClick={scrollToContent}
                     size="lg"
-                    className="bg-[#3f8ec9] text-[#fffaf2] font-semibold border-[#3f8ec9] hover:bg-[#2d7bb8] hover:border-[#2d7bb8] transition-colors flex items-center gap-4 px-6 py-8 rounded-md text-lg md:text-xl text-left leading-tight"
+                    className="bg-[#3f8ec9] text-[#fffaf2] font-semibold border-[#3f8ec9] hover:bg-[#2d7bb8] hover:border-[#2d7bb8] transition-colors flex items-center gap-2 sm:gap-4 px-4 sm:px-6 py-6 sm:py-8 rounded-md text-sm sm:text-lg md:text-xl text-center leading-tight"
                   >
-                    <PackageOpen className="w-48 h-48 shrink-0" />
-                    <span>Quero ver pontos de distribuição</span>
+                    <PackageOpen className="w-6 h-6 sm:w-8 sm:h-8 shrink-0" />
+                    <span className="text-xs sm:text-sm md:text-base lg:text-lg">
+                      Quero ver pontos de distribuição
+                    </span>
                   </Button>
                 </div>
               </div>
 
-              <div className="flex-shrink-0">
-                <Image src="/vape.png" alt="" width={500} height={500} />
+              {/* Hide vape image on mobile and small screens */}
+              <div className="hidden lg:flex flex-shrink-0 w-full lg:w-auto max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
+                <Image
+                  src="/vape.png"
+                  alt=""
+                  width={500}
+                  height={500}
+                  className="w-full h-auto max-w-[300px] sm:max-w-[400px] lg:max-w-[500px] mx-auto"
+                />
               </div>
             </div>
           </div>
 
-          {/* Indicador de scroll */}
           <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
             <button
               onClick={scrollToContent}
               className="text-white/70 hover:text-white transition-colors"
               aria-label="Rolar para baixo"
             >
-              <ChevronDown className="h-8 w-8" />
+              <ChevronDown className="h-6 w-6 sm:h-8 sm:w-8" />
             </button>
           </div>
         </section>
 
-        {/* Resto do conteúdo - Aparece com scroll */}
         <div
           className={`transform transition-all duration-1000 ${
             showContent
@@ -514,53 +521,58 @@ export default function VaporaidLandingPage() {
               : "translate-y-20 opacity-0"
           }`}
         >
-          <section id="sobre" className="py-16 px-4 bg-[#fffaf2]">
+          <section id="sobre" className="py-12 sm:py-16 px-4 bg-[#fffaf2]">
             <div className="container mx-auto">
-              <div className="text-center mb-12">
-                <div className="inline-flex items-center justify-center gap-4">
+              <div className="text-center mb-8 sm:mb-12">
+                <div className="inline-flex items-center justify-center gap-2 sm:gap-4 flex-wrap">
                   <Image
                     src="mosquito.png"
                     alt="Mosquito"
                     width={70}
                     height={70}
+                    className="w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
                   />
-                  <h2 className="text-3xl font-bold text-[#0f1f2a]">
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#0f1f2a] text-center">
                     O Desafio e a Solução Vaporaid
                   </h2>
-
-                  <Image src="vape.png" alt="Mosquito" width={30} height={30} />
+                  <Image
+                    src="vape.png"
+                    alt="Vape"
+                    width={30}
+                    height={30}
+                    className="w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8"
+                  />
                 </div>
-                <p className="text-[#8d8c8c] max-w-2xl mx-auto">
+                <p className="text-sm sm:text-base text-[#8d8c8c] max-w-2xl mx-auto mt-4">
                   Enfrentamos dois grandes problemas: o descarte inadequado de
                   cigarros eletrônicos e a persistência de doenças transmitidas
                   por mosquitos. O Vaporaid surge como uma resposta inovadora.
                 </p>
               </div>
-              
 
-              <div className="grid md:grid-cols-2 gap-8 items-center">
-                <div>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
+                <div className="order-2 lg:order-1">
                   <Image
                     src="exemplo.png"
                     alt="Ilustração do problema: vapes descartados e mosquito"
                     width={500}
                     height={350}
-                    className="rounded-lg shadow-lg mx-auto border border-[#dfdad3]"
+                    className="w-full h-auto rounded-lg shadow-lg mx-auto border border-[#dfdad3]"
                   />
                 </div>
-                <div>
-                  <h3 className="text-2xl font-semibold text-[#0f1f2a] mb-3">
+                <div className="order-1 lg:order-2">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-[#0f1f2a] mb-3">
                     Nossa Proposta: Ressignificar para Proteger
                   </h3>
-                  <p className="text-[#8d8c8c] mb-4">
+                  <p className="text-sm sm:text-base text-[#8d8c8c] mb-4">
                     O Vaporaid é um dispositivo vaporizador de repelente
                     líquido, desenvolvido a partir da reutilização de
                     componentes de cigarros eletrônicos (vapes/pods) apreendidos
                     e doados.
                   </p>
-                  <ul className="space-y-2 text-[#8d8c8c]">
+                  <ul className="space-y-3 text-sm sm:text-base text-[#8d8c8c]">
                     <li className="flex items-start">
-                      <Recycle className="h-5 w-5 text-[#3f8ec9] mr-2 mt-1 flex-shrink-0" />
+                      <Recycle className="h-4 w-4 sm:h-5 sm:w-5 text-[#3f8ec9] mr-2 mt-1 flex-shrink-0" />
                       <span>
                         <strong className="text-[#0f1f2a]">
                           Componentes Reutilizados:
@@ -569,7 +581,7 @@ export default function VaporaidLandingPage() {
                       </span>
                     </li>
                     <li className="flex items-start">
-                      <Lightbulb className="h-5 w-5 text-[#3f8ec9] mr-2 mt-1 flex-shrink-0" />
+                      <Lightbulb className="h-4 w-4 sm:h-5 sm:w-5 text-[#3f8ec9] mr-2 mt-1 flex-shrink-0" />
                       <span>
                         <strong className="text-[#0f1f2a]">
                           Funcionamento Simples:
@@ -579,7 +591,7 @@ export default function VaporaidLandingPage() {
                       </span>
                     </li>
                     <li className="flex items-start">
-                      <PackageOpen className="h-5 w-5 text-[#3f8ec9] mr-2 mt-1 flex-shrink-0" />
+                      <PackageOpen className="h-4 w-4 sm:h-5 sm:w-5 text-[#3f8ec9] mr-2 mt-1 flex-shrink-0" />
                       <span>
                         <strong className="text-[#0f1f2a]">
                           Distribuição Gratuita:
@@ -594,34 +606,31 @@ export default function VaporaidLandingPage() {
             </div>
           </section>
 
-          {/* Seção de Pontos de Coleta */}
-          <section id="coleta" className="relative py-16 px-4 overflow-hidden">
-            {/* Imagem de fundo */}
+          <section
+            id="coleta"
+            className="relative py-12 sm:py-16 px-4 overflow-hidden"
+          >
             <img
               src="fundo_bonitinho.png"
               alt="Pontos de coleta"
               className="absolute inset-0 w-full h-full object-cover"
             />
-
-            {/* Camada azul clara com baixa opacidade */}
             <div className="absolute inset-0 bg-[#0F1F2A]/85" />
 
-            {/* Conteúdo */}
             <div className="relative z-10 container mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold text-white mb-4">
+              <div className="text-center mb-8 sm:mb-12">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">
                   Pontos de Coleta
                 </h2>
-                <p className="text-white/90 max-w-2xl mx-auto">
+                <p className="text-sm sm:text-base text-white/90 max-w-2xl mx-auto">
                   Encontre o ponto de coleta mais próximo de você e contribua
                   para um futuro mais sustentável.
                 </p>
               </div>
 
-              {/* Filtros */}
-              <div className="flex flex-col md:flex-row gap-4 mb-8 max-w-4xl mx-auto">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8 max-w-4xl mx-auto">
                 <Select onValueChange={handleStateChange}>
-                  <SelectTrigger className="w-full md:w-1/3 bg-[#fffaf2] border-[#bab9b9] text-[#0f1f2a]">
+                  <SelectTrigger className="w-full sm:w-1/3 bg-[#fffaf2] border-[#bab9b9] text-[#0f1f2a] text-sm">
                     <SelectValue placeholder="Selecione o Estado" />
                   </SelectTrigger>
                   <SelectContent className="bg-[#fffaf2] border-[#bab9b9]">
@@ -638,7 +647,7 @@ export default function VaporaidLandingPage() {
                   onValueChange={handleCityChange}
                   disabled={!selectedState}
                 >
-                  <SelectTrigger className="w-full md:w-1/3 bg-[#fffaf2] border-[#bab9b9] text-[#0f1f2a] disabled:opacity-50">
+                  <SelectTrigger className="w-full sm:w-1/3 bg-[#fffaf2] border-[#bab9b9] text-[#0f1f2a] disabled:opacity-50 text-sm">
                     <SelectValue placeholder="Selecione a Cidade" />
                   </SelectTrigger>
                   <SelectContent className="bg-[#fffaf2] border-[#bab9b9]">
@@ -655,7 +664,7 @@ export default function VaporaidLandingPage() {
                   onValueChange={handleNeighborhoodChange}
                   disabled={!selectedCity}
                 >
-                  <SelectTrigger className="w-full md:w-1/3 bg-[#fffaf2] border-[#bab9b9] text-[#0f1f2a] disabled:opacity-50">
+                  <SelectTrigger className="w-full sm:w-1/3 bg-[#fffaf2] border-[#bab9b9] text-[#0f1f2a] disabled:opacity-50 text-sm">
                     <SelectValue placeholder="Selecione o Bairro" />
                   </SelectTrigger>
                   <SelectContent className="bg-[#fffaf2] border-[#bab9b9]">
@@ -669,20 +678,19 @@ export default function VaporaidLandingPage() {
                 </Select>
               </div>
 
-              {/* Cards dos Pontos de Coleta */}
               <div className="relative">
                 {filteredPoints.length > 0 ? (
                   <>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
                       {collectionPointsToShow.map((point) => (
                         <Card
                           key={point.id}
-                          className="h-100 flex flex-col shadow-lg hover:shadow-xl transition-shadow bg-[#fffaf2] border-[#bab9b9]"
+                          className="h-auto flex flex-col shadow-lg hover:shadow-xl transition-shadow bg-[#fffaf2] border-[#bab9b9]"
                         >
                           <CardHeader className="flex-shrink-0 pb-3">
                             <div className="flex items-center gap-3 mb-2">
                               {point.icon}
-                              <CardTitle className="text-lg text-[#0f1f2a] line-clamp-2">
+                              <CardTitle className="text-base sm:text-lg text-[#0f1f2a] line-clamp-2">
                                 {point.name}
                               </CardTitle>
                             </div>
@@ -691,20 +699,20 @@ export default function VaporaidLandingPage() {
                             <div className="space-y-2 flex-1">
                               <div className="flex items-start gap-2">
                                 <MapPin className="h-4 w-4 text-[#8d8c8c] mt-0.5 flex-shrink-0" />
-                                <p className="text-sm text-[#8d8c8c] line-clamp-2">
+                                <p className="text-xs sm:text-sm text-[#8d8c8c] line-clamp-2">
                                   {point.address}
                                 </p>
                               </div>
                               <div className="flex items-start gap-2">
                                 <Clock className="h-4 w-4 text-[#8d8c8c] mt-0.5 flex-shrink-0" />
-                                <p className="text-sm text-[#8d8c8c]">
+                                <p className="text-xs sm:text-sm text-[#8d8c8c]">
                                   {point.hours}
                                 </p>
                               </div>
                             </div>
-                            <div className="aspect-video w-full rounded-md overflow-hidden mt-auto border border-[#bab9b9]">
+                            <div className="aspect-video w-full rounded-md overflow-hidden mt-3 border border-[#bab9b9]">
                               <iframe
-                                className="my-3 rounded-md"
+                                className="rounded-md"
                                 src={point.mapEmbedUrl}
                                 width="100%"
                                 height="100%"
@@ -720,18 +728,17 @@ export default function VaporaidLandingPage() {
                       ))}
                     </div>
 
-                    {/* Navegação do Carrossel */}
                     {filteredPoints.length > ITEMS_PER_COLLECTION_SLIDE && (
                       <div className="flex justify-center items-center gap-4">
                         <Button
                           variant="outline"
                           size="icon"
                           onClick={prevCollectionSlide}
-                          className="rounded-full bg-[#fffaf2] border-[#bab9b9] text-[#0f1f2a] hover:bg-[#dfdad3]"
+                          className="rounded-full bg-[#fffaf2] border-[#bab9b9] text-[#0f1f2a] hover:bg-[#dfdad3] h-8 w-8 sm:h-10 sm:w-10"
                         >
-                          <ChevronLeft className="h-4 w-4" />
+                          <ChevronLeft className="h-3 w-3 sm:h-4 sm:w-4" />
                         </Button>
-                        <span className="text-sm text-[#8d8c8c]">
+                        <span className="text-xs sm:text-sm text-white/90 px-2">
                           {Math.floor(
                             currentCollectionStartIndex /
                               ITEMS_PER_COLLECTION_SLIDE
@@ -745,16 +752,16 @@ export default function VaporaidLandingPage() {
                           variant="outline"
                           size="icon"
                           onClick={nextCollectionSlide}
-                          className="rounded-full bg-[#fffaf2] border-[#bab9b9] text-[#0f1f2a] hover:bg-[#dfdad3]"
+                          className="rounded-full bg-[#fffaf2] border-[#bab9b9] text-[#0f1f2a] hover:bg-[#dfdad3] h-8 w-8 sm:h-10 sm:w-10"
                         >
-                          <ChevronRight className="h-4 w-4" />
+                          <ChevronRight className="h-3 w-3 sm:h-4 sm:w-4" />
                         </Button>
                       </div>
                     )}
                   </>
                 ) : (
                   <div className="text-center py-12">
-                    <p className="text-[#8d8c8c] text-lg">
+                    <p className="text-white/90 text-base sm:text-lg">
                       Nenhum ponto de coleta encontrado com os filtros
                       selecionados.
                     </p>
@@ -764,9 +771,7 @@ export default function VaporaidLandingPage() {
             </div>
           </section>
 
-          {/* Ciclo de Vida e Sustentabilidade */}
-          <section className="relative py-16 px-4">
-            {/* Imagem de fundo */}
+          <section className="relative py-12 sm:py-16 px-4">
             <img
               src="fundo2.png"
               alt="Fundo Ciclo de Vida"
@@ -774,32 +779,27 @@ export default function VaporaidLandingPage() {
             />
 
             <div className="container mx-auto relative z-10">
-              {/* Mosquito à esquerda */}
-
-              {/* Texto centralizado */}
-              <div className="text-center max-w-2xl mx-auto mb-12">
-                <h2 className="text-3xl font-bold text-[#0f1f2a] mb-2">
+              <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#0f1f2a] mb-2">
                   Ciclo de Vida Sustentável
                 </h2>
-                <p className="text-[#4b4b4b]">
+                <p className="text-sm sm:text-base text-[#4b4b4b]">
                   O Vaporaid é pensado para um ciclo completo, da produção ao
                   descarte consciente e recondicionamento.
                 </p>
               </div>
 
-              {/* Container principal com as duas divs lado a lado */}
-              <div className="flex flex-col lg:flex-row items-center justify-center gap-8">
-                {/* Div dos Cards */}
-                <div className="flex flex-col">
-                  <div className="grid grid-cols-1 gap-8">
+              <div className="flex flex-col xl:flex-row items-center justify-center gap-6 lg:gap-8">
+                <div className="w-full xl:w-auto">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-1 gap-4 sm:gap-6 xl:gap-8 max-w-2xl xl:max-w-none mx-auto">
                     <Card className="bg-[#fffaf2] border-[#dfdad3]">
                       <CardHeader>
-                        <CardTitle className="text-[#0f1f2a]">
+                        <CardTitle className="text-lg sm:text-xl text-[#0f1f2a]">
                           1. Coleta e Doação
                         </CardTitle>
                       </CardHeader>
                       <CardContent>
-                        <p className="text-[#8d8c8c]">
+                        <p className="text-sm sm:text-base text-[#8d8c8c]">
                           Vapes e pods são coletados em pontos específicos,
                           doados pela população e parceiros.
                         </p>
@@ -808,26 +808,26 @@ export default function VaporaidLandingPage() {
 
                     <Card className="bg-[#fffaf2] border-[#dfdad3]">
                       <CardHeader>
-                        <CardTitle className="text-[#0f1f2a]">
+                        <CardTitle className="text-lg sm:text-xl text-[#0f1f2a]">
                           2. Transformação
                         </CardTitle>
                       </CardHeader>
                       <CardContent>
-                        <p className="text-[#8d8c8c]">
+                        <p className="text-sm sm:text-base text-[#8d8c8c]">
                           Componentes são testados, adaptados e montados no
                           dispositivo Vaporaid com repelente.
                         </p>
                       </CardContent>
                     </Card>
 
-                    <Card className="bg-[#fffaf2] border-[#dfdad3]">
+                    <Card className="bg-[#fffaf2] border-[#dfdad3] sm:col-span-2 xl:col-span-1">
                       <CardHeader>
-                        <CardTitle className="text-[#0f1f2a]">
+                        <CardTitle className="text-lg sm:text-xl text-[#0f1f2a]">
                           3. Proteção em Ação
                         </CardTitle>
                       </CardHeader>
                       <CardContent>
-                        <p className="text-[#8d8c8c]">
+                        <p className="text-sm sm:text-base text-[#8d8c8c]">
                           O Vaporaid é utilizado pela comunidade para dispersar
                           o repelente, protegendo os lares contra o mosquito
                           transmissor.
@@ -837,46 +837,44 @@ export default function VaporaidLandingPage() {
                   </div>
                 </div>
 
-                {/* Div da Imagem */}
-                <div className="text-center">
+                <div className="w-full xl:w-auto text-center">
                   <Image
                     src="/reciclagem.jpeg"
                     alt="Diagrama do ciclo de vida do Vaporaid"
                     width={600}
                     height={300}
-                    className="rounded-lg shadow-lg mx-auto border border-[#dfdad3]"
+                    className="w-full h-auto max-w-sm sm:max-w-md md:max-w-lg xl:max-w-2xl rounded-lg shadow-lg mx-auto border border-[#dfdad3]"
                   />
                 </div>
               </div>
             </div>
           </section>
 
-          <section id="nossos-pilares" className="py-16 px-4 bg-[#fffaf2]">
+          <section id="nossos-pilares" className="py-12 sm:py-16 px-4 bg-[#fffaf2]">
             <div className="container mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold text-[#0f1f2a] mb-4">
+              <div className="text-center mb-8 sm:mb-12">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#0f1f2a] mb-4">
                   Nossos Pilares
                 </h2>
-                <p className="text-[#8d8c8c] max-w-2xl mx-auto">
+                <p className="text-sm sm:text-base text-[#8d8c8c] max-w-2xl mx-auto">
                   Conheça a Missão, Visão e Valores que guiam o Projeto Vaporaid
                   na busca por um futuro mais saudável e sustentável.
                 </p>
               </div>
 
-              {/* Grid de cartões lado a lado */}
-              <div className="grid gap-8 md:grid-cols-3">
+              <div className="grid gap-6 sm:gap-8 grid-cols-1 lg:grid-cols-3">
                 {missionVisionValuesData.map((item) => (
                   <Card
                     key={item.title}
-                    className="min-h-[320px] flex flex-col justify-start items-center text-center p-6 md:p-8 bg-[#fffaf2] border-[#dfdad3]"
+                    className="min-h-[280px] sm:min-h-[320px] flex flex-col justify-start items-center text-center p-4 sm:p-6 lg:p-8 bg-[#fffaf2] border-[#dfdad3]"
                   >
-                    <CardHeader className="flex flex-col items-center mb-4">
-                      {item.icon}
-                      <CardTitle className="text-2xl text-[#0f1f2a] mt-2">
+                    <CardHeader className="flex flex-col items-center mb-3 sm:mb-4">
+                      <div className="mb-2 sm:mb-3">{item.icon}</div>
+                      <CardTitle className="text-xl sm:text-2xl text-[#0f1f2a]">
                         {item.title}
                       </CardTitle>
                     </CardHeader>
-                    <CardContent className="text-[#8d8c8c] text-sm sm:text-base">
+                    <CardContent className="text-[#8d8c8c] text-xs sm:text-sm lg:text-base leading-relaxed">
                       {typeof item.content === "string" ? (
                         <p>{item.content}</p>
                       ) : (
@@ -889,19 +887,19 @@ export default function VaporaidLandingPage() {
             </div>
           </section>
 
-          <section className="py-20 px-4 bg-[#3f8ec9] text-[#fffaf2]">
+          <section className="py-16 sm:py-20 px-4 bg-[#3f8ec9] text-[#fffaf2]">
             <div className="container mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6">
                 Junte-se à Revolução Vaporaid!
               </h2>
-              <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto opacity-90">
+              <p className="text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 max-w-2xl mx-auto opacity-90">
                 Sua pequena ação de doar um vape pode ter um grande impacto na
                 saúde da sua comunidade e na preservação do meio ambiente.
               </p>
               <Link href="#coleta">
                 <Button
                   size="lg"
-                  className="bg-[#fffaf2] text-[#3f8ec9] hover:bg-[#dfdad3] border-[#fffaf2] hover:border-[#dfdad3] transition-colors"
+                  className="bg-[#fffaf2] text-[#3f8ec9] hover:bg-[#dfdad3] border-[#fffaf2] hover:border-[#dfdad3] transition-colors text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4"
                 >
                   Encontrar Ponto de Coleta Agora
                 </Button>
@@ -911,7 +909,7 @@ export default function VaporaidLandingPage() {
         </div>
       </main>
 
-      <footer className="bg-[#0f1f2a] text-[#bab9b9] py-8 px-4">
+      <footer className="bg-[#0f1f2a] text-[#bab9b9] py-6 sm:py-8 px-4">
         <div className="container mx-auto text-center">
           <div className="mb-4">
             <Link
@@ -923,13 +921,17 @@ export default function VaporaidLandingPage() {
                 alt=""
                 width={40}
                 height={40}
-                className=""
-              />{" "}
-              <span className="text-xl font-bold text-[#fffaf2]">Vaporaid</span>
+                className="w-8 h-8 sm:w-10 sm:h-10"
+              />
+              <span className="text-lg sm:text-xl font-bold text-[#fffaf2]">
+                Vaporaid
+              </span>
             </Link>
-            <p className="text-sm">Transformando resíduos em bem-estar.</p>
+            <p className="text-xs sm:text-sm">
+              Transformando resíduos em bem-estar.
+            </p>
           </div>
-          <div className="flex justify-center gap-6 mb-4">
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-4 text-sm">
             <Link
               href="#sobre"
               className="hover:text-[#3f8ec9] transition-colors"
